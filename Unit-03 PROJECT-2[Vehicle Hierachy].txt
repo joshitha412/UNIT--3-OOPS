@@ -1,0 +1,75 @@
+import java.util.*;
+
+class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Bike b = new Bike();
+
+        System.out.println("Menu");
+        System.out.println("1. Display Full Bike Details");
+        System.out.println("2. Display Bike Performance Details");
+
+        int choice = sc.nextInt();
+        sc.nextLine();
+
+        if (choice == 1) {
+
+            System.out.println("Enter Bike Name:");
+            String name = sc.nextLine();
+
+            System.out.println("Enter Price:");
+            int price = sc.nextInt();
+            sc.nextLine();
+
+            System.out.println("Enter Color:");
+            String color = sc.nextLine();
+
+            System.out.println("Enter Speed:");
+            int speed = sc.nextInt();
+            sc.nextLine();
+
+            System.out.println("Enter Brand:");
+            String brand = sc.nextLine();
+
+            b.displayBikeDetails(name, price, color, speed, brand);
+
+        } else if (choice == 2) {
+
+            System.out.println("Enter Price:");
+            int price = sc.nextInt();
+
+            System.out.println("Enter Speed:");
+            int speed = sc.nextInt();
+
+            b.displayBikeDetails(price, speed);
+
+        } else {
+
+            System.out.println("Invalid Choice");
+        }
+
+        sc.close();
+    }
+}
+
+class Bike {
+
+    void displayBikeDetails(String bikename, int price, String color, int speed, String brand) {
+
+        System.out.println("Bike Details:");
+        System.out.println("Bike Name: " + bikename);
+        System.out.println("Price: " + price);
+        System.out.println("Color: " + color);
+        System.out.println("Speed: " + speed + " km/h");
+        System.out.println("Brand: " + brand);
+    }
+
+    void displayBikeDetails(int price, int speed) {
+
+        System.out.println("Bike Performance Details:");
+        System.out.println("Price: " + price);
+        System.out.println("Speed: " + speed + " km/h");
+    }
+}
