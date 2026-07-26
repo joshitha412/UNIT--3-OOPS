@@ -1,0 +1,100 @@
+import java.util.*;
+
+interface SportsActions {
+    void play();
+    void showRole();
+    void displayPlayerInfo();
+}
+
+class Player {
+    String name;
+    int age;
+
+    Player(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void displayPlayerInfo() {
+        System.out.println("Player Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Cricketer extends Player implements SportsActions {
+
+    Cricketer(String name, int age) {
+        super(name, age);
+    }
+
+    public void play() {
+        System.out.println("Cricketer is playing cricket.");
+    }
+
+    public void showRole() {
+        System.out.println("Sport: Cricket");
+        System.out.println("Role: Batsman/Bowler");
+    }
+
+    public void displayPlayerInfo() {
+        super.displayPlayerInfo();
+    }
+}
+
+class Footballer extends Player implements SportsActions {
+
+    Footballer(String name, int age) {
+        super(name, age);
+    }
+
+    public void play() {
+        System.out.println("Footballer is playing football.");
+    }
+
+    public void showRole() {
+        System.out.println("Sport: Football");
+        System.out.println("Role: Striker/Goalkeeper");
+    }
+
+    public void displayPlayerInfo() {
+        super.displayPlayerInfo();
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Sports App");
+        System.out.println("1. Cricketer");
+        System.out.println("2. Footballer");
+        System.out.print("Enter your choice (1-2): ");
+
+        int choice = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Player Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Player Age: ");
+        int age = sc.nextInt();
+
+        SportsActions player;
+
+        if (choice == 1) {
+            player = new Cricketer(name, age);
+        } else {
+            player = new Footballer(name, age);
+        }
+
+        System.out.println();
+        player.play();
+        player.showRole();
+        player.displayPlayerInfo();
+
+        sc.close();
+    }
+}
