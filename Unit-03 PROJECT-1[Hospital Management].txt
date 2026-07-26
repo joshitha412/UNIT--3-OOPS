@@ -1,0 +1,244 @@
+import java.util.*;
+
+class Hospitalmanagement {
+
+    String name;
+    int age;
+    String gender;
+    long phn;
+
+    Hospitalmanagement(String name, int age, String gender, long phn) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.phn = phn;
+    }
+
+    void displayHospitalInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Gender: " + gender);
+        System.out.println("Phone: " + phn);
+    }
+}
+
+class Doctor extends Hospitalmanagement {
+
+    String doctorId;
+    String specialization;
+    double salary;
+    String department;
+
+    Doctor(String name, int age, String gender, long phn,
+           String doctorId, String specialization,
+           double salary, String department) {
+
+        super(name, age, gender, phn);
+        this.doctorId = doctorId;
+        this.specialization = specialization;
+        this.salary = salary;
+        this.department = department;
+    }
+
+    void displayDoctorInfo() {
+        System.out.println("Doctor Details");
+        displayHospitalInfo();
+        System.out.println("Doctor ID: " + doctorId);
+        System.out.println("Specialization: " + specialization);
+        System.out.println("Salary: " + salary);
+        System.out.println("Department: " + department);
+    }
+}
+
+class Patient extends Hospitalmanagement {
+
+    String patientId;
+    String disease;
+    String blood;
+    String admissionDate;
+
+    Patient(String name, int age, String gender, long phn,
+            String patientId, String disease,
+            String blood, String admissionDate) {
+
+        super(name, age, gender, phn);
+        this.patientId = patientId;
+        this.disease = disease;
+        this.blood = blood;
+        this.admissionDate = admissionDate;
+    }
+
+    void displayPatientInfo() {
+        System.out.println("Patient Details");
+        displayHospitalInfo();
+        System.out.println("Patient ID: " + patientId);
+        System.out.println("Disease: " + disease);
+        System.out.println("Blood Group: " + blood);
+        System.out.println("Admission Date: " + admissionDate);
+    }
+}
+
+class Nurse extends Hospitalmanagement {
+
+    String nurseId;
+    String department;
+    String shift;
+    double salary;
+    String ward;
+
+    Nurse(String name, int age, String gender, long phn,
+          String nurseId, String department,
+          String shift, double salary, String ward) {
+
+        super(name, age, gender, phn);
+        this.nurseId = nurseId;
+        this.department = department;
+        this.shift = shift;
+        this.salary = salary;
+        this.ward = ward;
+    }
+
+    void displayNurseInfo() {
+        System.out.println("Nurse Details");
+        displayHospitalInfo();
+        System.out.println("Nurse ID: " + nurseId);
+        System.out.println("Department: " + department);
+        System.out.println("Shift: " + shift);
+        System.out.println("Salary: " + salary);
+        System.out.println("Ward Assigned: " + ward);
+    }
+}
+
+class Appointment {
+
+    String appointmentId;
+    String patientName;
+    String doctorName;
+    String appointmentDate;
+    String appointmentTime;
+    String status;
+
+    Appointment(String appointmentId, String patientName,
+                String doctorName, String appointmentDate,
+                String appointmentTime, String status) {
+
+        this.appointmentId = appointmentId;
+        this.patientName = patientName;
+        this.doctorName = doctorName;
+        this.appointmentDate = appointmentDate;
+        this.appointmentTime = appointmentTime;
+        this.status = status;
+    }
+
+    void displayAppointmentInfo() {
+        System.out.println("Appointment Details");
+        System.out.println("Appointment ID: " + appointmentId);
+        System.out.println("Patient Name: " + patientName);
+        System.out.println("Doctor Name: " + doctorName);
+        System.out.println("Date: " + appointmentDate);
+        System.out.println("Time: " + appointmentTime);
+        System.out.println("Status: " + status);
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("HOSPITAL MANAGEMENT SYSTEM");
+
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Age: ");
+        int age = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Gender: ");
+        String gender = sc.nextLine();
+
+        System.out.print("Enter Phone: ");
+        long phone = sc.nextLong();
+        sc.nextLine();
+
+        System.out.print("Enter Doctor ID: ");
+        String doctorId = sc.nextLine();
+
+        System.out.print("Enter Specialization: ");
+        String specialization = sc.nextLine();
+
+        System.out.print("Enter Doctor Salary: ");
+        double salary = sc.nextDouble();
+        sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        String department = sc.nextLine();
+
+        System.out.print("Enter Patient ID: ");
+        String patientId = sc.nextLine();
+
+        System.out.print("Enter Disease: ");
+        String disease = sc.nextLine();
+
+        System.out.print("Enter Blood Group: ");
+        String blood = sc.nextLine();
+
+        System.out.print("Enter Admission Date: ");
+        String admissionDate = sc.nextLine();
+
+        System.out.print("Enter Nurse ID: ");
+        String nurseId = sc.nextLine();
+
+        System.out.print("Enter Nurse Department: ");
+        String nDepartment = sc.nextLine();
+
+        System.out.print("Enter Shift: ");
+        String shift = sc.nextLine();
+
+        System.out.print("Enter Nurse Salary: ");
+        double nSalary = sc.nextDouble();
+        sc.nextLine();
+
+        System.out.print("Enter Ward Assigned: ");
+        String ward = sc.nextLine();
+
+        System.out.print("Enter Appointment ID: ");
+        String appId = sc.nextLine();
+
+        System.out.print("Enter Appointment Patient Name: ");
+        String appPatient = sc.nextLine();
+
+        System.out.print("Enter Appointment Doctor Name: ");
+        String appDoctor = sc.nextLine();
+
+        System.out.print("Enter Appointment Date: ");
+        String appDate = sc.nextLine();
+
+        System.out.print("Enter Appointment Time: ");
+        String appTime = sc.nextLine();
+
+        System.out.print("Enter Status: ");
+        String status = sc.nextLine();
+
+        Doctor doctor = new Doctor(name, age, gender, phone,
+                doctorId, specialization, salary, department);
+
+        Patient patient = new Patient(name, age, gender, phone,
+                patientId, disease, blood, admissionDate);
+
+        Nurse nurse = new Nurse(name, age, gender, phone,
+                nurseId, nDepartment, shift, nSalary, ward);
+
+        Appointment appointment = new Appointment(appId, appPatient,
+                appDoctor, appDate, appTime, status);
+
+        doctor.displayDoctorInfo();
+        patient.displayPatientInfo();
+        nurse.displayNurseInfo();
+        appointment.displayAppointmentInfo();
+
+        sc.close();
+    }
+}
